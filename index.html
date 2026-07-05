@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>趴趴听</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <video id="bg-video" muted loop playsinline></video>
+    <div id="overlay"></div>
+    <div id="lyrics-container">
+      <div id="lyrics-scroll"></div>
+    </div>
+    <div id="controls-bar">
+      <div id="progress-area">
+        <span id="time-current">0:00</span>
+        <div id="progress-bar">
+          <div id="progress-fill">
+            <div id="progress-thumb"></div>
+          </div>
+        </div>
+        <span id="time-total">0:00</span>
+      </div>
+      <div id="controls-row">
+        <div id="cover-section">
+          <img id="cover-thumb" src="/favicon.png" alt="cover" />
+          <div id="track-info">
+            <span id="track-title">未选择曲目</span>
+            <span id="track-artist">-</span>
+          </div>
+        </div>
+        <div id="controls-group">
+          <button id="btn-repeat" class="ctrl-btn">🔁</button>
+          <button id="btn-prev" class="ctrl-btn">⏮</button>
+          <button id="btn-play" class="ctrl-btn play-btn">▶</button>
+          <button id="btn-next" class="ctrl-btn">⏭</button>
+          <button id="btn-lyrics" class="ctrl-btn">词</button>
+          <button id="btn-playlist" class="ctrl-btn">☰</button>
+          <button id="btn-fullscreen" class="ctrl-btn">⛶</button>
+        </div>
+        <div id="volume-wrap">
+          <button id="btn-volume" class="ctrl-btn">🔊</button>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7" />
+        </div>
+      </div>
+      <input type="file" id="file-input" accept="audio/*" hidden />
+    </div>
+    <div id="playlist-drawer">
+      <div id="playlist-header">
+        <span>播放列表</span>
+        <button id="playlist-close">✕</button>
+      </div>
+      <div id="playlist-items"></div>
+    </div>
+    <div id="playlist-backdrop"></div>
+    <div id="loading-overlay"><div class="spinner"></div></div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

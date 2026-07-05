@@ -1,0 +1,8 @@
+node_modules
+dist
+.playwright-mcp
+
+# 大文件和资源文件不上传
+public/bg.mp4
+image/
+muisic/
